@@ -10,17 +10,25 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import ru.arturvasilov.githubmvp.screen.auth.AuthPresenterTest;
+import ru.arturvasilov.githubmvp.test.TestGithubRepository;
 import ru.arturvasilov.githubmvp.test.TestKeyValueStorage;
+import ru.arturvasilov.rxloader.RxSchedulers;
 import ru.gdgkazan.githubmvp.R;
+import ru.gdgkazan.githubmvp.api.ApiFactory;
+import ru.gdgkazan.githubmvp.content.Authorization;
 import ru.gdgkazan.githubmvp.content.Benefit;
+import ru.gdgkazan.githubmvp.content.Repository;
 import ru.gdgkazan.githubmvp.repository.KeyValueStorage;
 import ru.gdgkazan.githubmvp.repository.RepositoryProvider;
 import ru.gdgkazan.githubmvp.screen.walkthrough.WalkthroughPresenter;
 import ru.gdgkazan.githubmvp.screen.walkthrough.WalkthroughView;
+import ru.gdgkazan.githubmvp.utils.AuthorizationUtils;
+import rx.Observable;
 
 import static junit.framework.Assert.assertNotNull;
 
@@ -115,6 +123,8 @@ public class WalkthroughPresenterTest {
 
     }
 
+
+
     private class TokenKeyValueStorage extends TestKeyValueStorage {
 
         private  boolean mResult;
@@ -136,6 +146,8 @@ public class WalkthroughPresenterTest {
 
 
     }
+
+
 
 
 
